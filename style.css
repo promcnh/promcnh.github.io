@@ -1,5 +1,5 @@
 @import 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
-@import 'http://fonts.googleapis.com/css?family=Roboto:700,400';
+@import 'http://fonts.googleapis.com/css?family=Open%20Sans:400';
 	/*
 	*  Basic Reset
 	*/
@@ -9,6 +9,7 @@
 
 body {
 	/*You can use any kind of background here.*/
+	transition: all 0.3s ease;
 	background: #000000;
 	/*background: #6b92b9;*/
 	/*background: url(https://scontent-sjc2-1.xx.fbcdn.net/t31.0-8/s960x960/12885848_1181531678538724_3979905963404338014_o.jpg) no-repeat center center fixed; 
@@ -20,6 +21,7 @@ body {
 
 .starfield { height:100%; left:0; position:fixed; top:0; width:100%; z-index:0;
 z-index:-10}
+
 
 canvas {
 	z-index: -10;
@@ -45,7 +47,7 @@ html {
 }
 body {
 	background-color: #00;
-	font-family: Roboto;
+	font-family: Open Sans;
 	font-weight: 400;
 	font-size: 1.6em;
 	line-height: 1.6;
@@ -104,6 +106,12 @@ box-shadow:
 	/*background-color: #fff;*/
 	background-color: rgba(0,0,0,0);
 	margin-bottom: 1.6rem;
+	display: block;
+
+    -webkit-animation: fadeInFromNone 1s ease-out;
+    -moz-animation: fadeInFromNone 1s ease-out;
+    -o-animation: fadeInFromNone 1s ease-out;
+    animation: fadeInFromNone 1s ease-out;
 }
 
 .card__padding {
@@ -121,33 +129,78 @@ box-shadow:
 	padding: 1.6rem;
 	font-size: 2rem;
 	width: 80%;
+	transition: all 0.3s ease;
 	/*background-color: rgba(255,0,0,0.2);*/
 	color: #fff;
 	border-style: solid;
 	border-color: white;
 	border-width: 0px 0px 0px 0px;
+	-webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+	-webkit-animation: fadeInFromNone 1s ease-out;
+    -moz-animation: fadeInFromNone 1s ease-out;
+    -o-animation: fadeInFromNone 1s ease-out;
+    animation: fadeInFromNone 1s ease-out;
 }
 
 .card__padding_header_red {
 	padding: 1.6rem;
 	font-size: 2rem;
 	width: 80%;
+	transition: all 0.3s ease;
 	/*background-color: rgba(255,0,0,0.2);*/
 	color: #fff;
 	border-style: solid;
 	border-color: white;
-	border-width: 2px 2px 0px 2px;
+	border-width: 1px 1px 1px 1px;
+	-webkit-animation-delay: 1s;
+    animation-delay: 1s;
+	-webkit-animation: fadeInFromNone 1s ease-out;
+    -moz-animation: fadeInFromNone 1s ease-out;
+    -o-animation: fadeInFromNone 1s ease-out;
+    animation: fadeInFromNone 1s ease-out;
+}
+.card__padding_header_red:hover,
+.card__padding_header_red:focus {
+	box-shadow: 
+		0 3px 6px rgba(0,0,0, 0.12),
+		0 3px 6px rgba(0,0,0, 0.24);
+
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	transform: scale(1.2);
 }
 
 .card__padding_header_blue {
 	padding: 1.6rem;
 	font-size: 2rem;
 	width: 80%;
+	transition: all 0.3s ease;
 	/*background-color: rgba(59,89,152,0.5);*/
 	color: #fff;
 	border-style: solid;
 	border-color: white;
-	border-width: 2px 2px 2px 2px;
+	border-width: 1px 1px 1px 1px;
+	-webkit-animation-delay: 2s;
+    animation-delay: 2s;
+	-webkit-animation: fadeInFromNone 1s ease-out;
+    -moz-animation: fadeInFromNone 1s ease-out;
+    -o-animation: fadeInFromNone 1s ease-out;
+    animation: fadeInFromNone 1s ease-out;
+}
+.card__padding_header_blue:hover,
+.card__padding_header_blue:focus {
+	box-shadow: 
+		0 3px 6px rgba(0,0,0, 0.12),
+		0 3px 6px rgba(0,0,0, 0.24);
+
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	transform: scale(1.2);
 }
 
 .card__image {
@@ -289,4 +342,84 @@ box-shadow:
 	.twitter:hover,
 	.googleplus:hover {
 		color: #eee;
+}
+
+@-webkit-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+		-webkit-transform: scale(1.2);
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+		-webkit-transform: scale(1.2);
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+		-webkit-transform: scale(1);
+    }
+}
+
+@-moz-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+		-webkit-transform: scale(1.2);
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+		-webkit-transform: scale(1.2);
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+		-webkit-transform: scale(1);
+    }
+}
+
+@-o-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+		-webkit-transform: scale(1.2);
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+		-webkit-transform: scale(1.2);
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+		-webkit-transform: scale(1);
+    }
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+		-webkit-transform: scale(1.2);
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+		-webkit-transform: scale(1.2);
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+		-webkit-transform: scale(1);
+    }
 }
