@@ -9,7 +9,6 @@
 
 body {
 	/*You can use any kind of background here.*/
-	transition: all 0.3s ease;
 	background: #000000;
 	/*background: #6b92b9;*/
 	/*background: url(https://scontent-sjc2-1.xx.fbcdn.net/t31.0-8/s960x960/12885848_1181531678538724_3979905963404338014_o.jpg) no-repeat center center fixed; 
@@ -21,7 +20,6 @@ body {
 
 .starfield { height:100%; left:0; position:fixed; top:0; width:100%; z-index:0;
 z-index:-10}
-
 
 canvas {
 	z-index: -10;
@@ -107,7 +105,6 @@ box-shadow:
 	background-color: rgba(0,0,0,0);
 	margin-bottom: 1.6rem;
 	display: block;
-
     -webkit-animation: fadeInFromNone 1s ease-out;
     -moz-animation: fadeInFromNone 1s ease-out;
     -o-animation: fadeInFromNone 1s ease-out;
@@ -123,6 +120,11 @@ box-shadow:
 	font-size: 2rem;
 	/*background-color: #B71C1C;*/
 	color: #fff;
+	display: block;
+    -webkit-animation: fadeInFromNone 1s ease-out;
+    -moz-animation: fadeInFromNone 1s ease-out;
+    -o-animation: fadeInFromNone 1s ease-out;
+    animation: fadeInFromNone 1s ease-out;
 }
 
 .card__padding_header_no {
@@ -135,9 +137,8 @@ box-shadow:
 	border-style: solid;
 	border-color: white;
 	border-width: 0px 0px 0px 0px;
-	-webkit-animation-delay: 0.2s;
-    animation-delay: 0.2s;
-	-webkit-animation: fadeInFromNone 1s ease-out;
+	display: block;
+    -webkit-animation: fadeInFromNone 1s ease-out;
     -moz-animation: fadeInFromNone 1s ease-out;
     -o-animation: fadeInFromNone 1s ease-out;
     animation: fadeInFromNone 1s ease-out;
@@ -153,9 +154,8 @@ box-shadow:
 	border-style: solid;
 	border-color: white;
 	border-width: 1px 1px 1px 1px;
-	-webkit-animation-delay: 1s;
-    animation-delay: 1s;
-	-webkit-animation: fadeInFromNone 1s ease-out;
+	display: block;
+    -webkit-animation: fadeInFromNone 1s ease-out;
     -moz-animation: fadeInFromNone 1s ease-out;
     -o-animation: fadeInFromNone 1s ease-out;
     animation: fadeInFromNone 1s ease-out;
@@ -183,9 +183,8 @@ box-shadow:
 	border-style: solid;
 	border-color: white;
 	border-width: 1px 1px 1px 1px;
-	-webkit-animation-delay: 2s;
-    animation-delay: 2s;
-	-webkit-animation: fadeInFromNone 1s ease-out;
+	display: block;
+    -webkit-animation: fadeInFromNone 1s ease-out;
     -moz-animation: fadeInFromNone 1s ease-out;
     -o-animation: fadeInFromNone 1s ease-out;
     animation: fadeInFromNone 1s ease-out;
@@ -348,13 +347,13 @@ box-shadow:
     0% {
         display: none;
         opacity: 0;
-		-webkit-transform: scale(1.2);
+		-webkit-transform: scale(0.6);
     }
 
     1% {
         display: block;
         opacity: 0;
-		-webkit-transform: scale(1.2);
+		-webkit-transform: scale(0.6);
     }
 
     100% {
@@ -368,13 +367,13 @@ box-shadow:
     0% {
         display: none;
         opacity: 0;
-		-webkit-transform: scale(1.2);
+		-webkit-transform: scale(0.6);
     }
 
     1% {
         display: block;
         opacity: 0;
-		-webkit-transform: scale(1.2);
+		-webkit-transform: scale(0.6);
     }
 
     100% {
@@ -388,13 +387,13 @@ box-shadow:
     0% {
         display: none;
         opacity: 0;
-		-webkit-transform: scale(1.2);
+		-webkit-transform: scale(0.6);
     }
 
     1% {
         display: block;
         opacity: 0;
-		-webkit-transform: scale(1.2);
+		-webkit-transform: scale(0.6);
     }
 
     100% {
@@ -408,13 +407,13 @@ box-shadow:
     0% {
         display: none;
         opacity: 0;
-		-webkit-transform: scale(1.2);
+		-webkit-transform: scale(0.6);
     }
 
     1% {
         display: block;
         opacity: 0;
-		-webkit-transform: scale(1.2);
+		-webkit-transform: scale(0.6);
     }
 
     100% {
