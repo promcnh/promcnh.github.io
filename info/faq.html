@@ -1,0 +1,122 @@
+
+<!DOCTYPE html><html class=''>
+<head>
+
+	<meta charset='UTF-8'>
+	<title>FAQ Iridescent Prom CNH</title>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- FB Open graph tag -->
+    <meta property="og:title" content="FAQ Iridescent Prom CNH"/>
+    <meta property="og:site_name" content="chuyenla"/>
+
+    <meta property="og:url" content="http://iridescent.com"/>
+    <meta property="og:description" content="Chào mừng bạn đã đến với Iridescent Prom 2016"/>
+    <meta property="og:image" content="https://scontent-lax3-1.xx.fbcdn.net/hphotos-xpf1/t31.0-8/s960x960/12885848_1181531678538724_3979905963404338014_o.jpg"/>
+    <meta property="og:type" content="article"/>
+	
+	<link rel="stylesheet" class="cp-pen-styles" type="text/css" href="style.css">
+</head>
+
+<body>
+<div class="wrapper">
+	<div class="card radius shadowDepth1">
+		<div class="card__image border-tlr-radius">
+			<img 
+			src="img/logo_big.png" 
+			alt="image" class="border-tlr-radius">
+        </div>
+		
+		<div class="card__content card__padding_header">
+			<div class="card__author">
+				<center>
+				<b>Đừng ngại ngần, hãy liên lạc với chung tớ nếu bạn có bất cứ câu hỏi nào.</b></br>&nbsp</br>
+				</center>
+			</div>
+		</div>
+		<center>
+		
+		<div id="bookingView" class="card__content card__padding_header_red">
+		<a href="https://ask.fm/iridescentprom2016">
+			<div class="card__author">
+				<center><b style="color:#fff;">Ghé thăm ask.fm của chúng tớ</b></center>
+			</div>
+		</a>
+		</div>
+		
+		<a href="https://www.facebook.com/IridescentProm2016/">
+		<div class="card__content card__padding_header_red">
+			<div class="card__author">
+				<center><b>Ghé thăm facebook fanpage</b></center>
+			</div>
+		</div>
+		</a>
+		
+		<a href="/">
+		<div class="card__content card__padding_header_blue">
+			<div class="card__author">
+				<center><b>Về trang chủ</b></center>
+			</div>
+		</div>
+		</a>
+		</center>
+		&nbsp</br>&nbsp</br>
+		<div class="card__action">
+			<center><font style="color:#999999">Designed by bạn đẹp trai</center>
+		</div>
+	</div>
+</div>
+<div class="starfield"></div>
+<script src='jquery.min.js'></script>
+<script src='animate_bg.js'></script>
+
+<!--script>$(document).ready(function ($) {
+    $('.card__share > a').on('click', function (e) {
+        e.preventDefault();
+        $(this).parent().find('div').toggleClass('card__social--active');
+        $(this).toggleClass('share-expanded');
+    });
+});
+//# sourceURL=pen.js
+</script-->
+<!--script>
+var end = new Date('04/20/2016 8:00 PM');
+//var end = new Date('04/17/2016 6:54 PM');
+
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
+
+    function showRemaining() {
+        var now = new Date();
+        var distance = end - now;
+        if (distance < 0) {
+
+            clearInterval(timer);
+            document.getElementById('countdown').innerHTML = 'EXPIRED!';
+            document.getElementById('bookingView').style.visibility = 'visible';
+            document.getElementById('countView').style.display = 'none';
+
+            return;
+        }
+        var days = Math.floor(distance / _day);
+        var hours = Math.floor((distance % _day) / _hour);
+        var minutes = Math.floor((distance % _hour) / _minute);
+        var seconds = Math.floor((distance % _minute) / _second);
+
+		document.getElementById('bookingView').style.display = 'none';
+        document.getElementById('countView').style.display = 'inline';
+        document.getElementById('countdown').innerHTML = 'Mở cửa đặt vé trong: ';
+        document.getElementById('countdown').innerHTML += days + ' ngày ';
+        document.getElementById('countdown').innerHTML += hours + ' giờ ';
+        document.getElementById('countdown').innerHTML += minutes + ' phút ';
+        document.getElementById('countdown').innerHTML += seconds + ' giây ';
+    }
+
+    timer = setInterval(showRemaining, 1000);
+</script-->
+</body></html>
