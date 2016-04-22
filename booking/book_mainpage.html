@@ -83,8 +83,8 @@
 <script src='animate_bg.js'></script>
 
 <script>
-	var isOperaMini = (navigator.userAgent.indexOf('Opera Mini') > -1);
-	if(isOperaMini) alert("Bạn đang dùng opera mini, việc đặt vé có thể gặp lỗi với trình duyệt này. Hãy thử vào bằng trình duyệt khác.");
+	var isOperaMini = ((navigator.userAgent.indexOf('Opera Mini') > -1) || (navigator.userAgent.indexOf('UC Mini') > -1));
+	if(isOperaMini) alert("Đăng ký bằng Opera mini hay UC Mini có thể sẽ lỗi. Nếu lỗi, bạn hãy thử lại bằng trình duyệt khác nhé!");
 </script>
 <!--script>$(document).ready(function ($) {
     $('.card__share > a').on('click', function (e) {
