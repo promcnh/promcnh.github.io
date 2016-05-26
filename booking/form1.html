@@ -102,13 +102,12 @@
 									<td>
 										&nbsp&nbsp&nbsp
 										<input type="radio" ng-model="checkShip" class="text1" name="accEnrol" id ="vea" value ="Yes" style="width: 20px; height: 20px;">&nbsp&nbsp
-										Nhận tại trường</input> </br>
+										Nhận tại địa điểm bán vé</input> </br>
 										&nbsp&nbsp&nbsp
 										<input type="radio" ng-model="checkShip" class="text1" name="accEnrol" id ="veb" value ="No" style="width: 20px; height: 20px;">&nbsp&nbsp
 										Ship về tận nhà (phí ship có ở bảng dưới)</input> </br>
 									</td>
-									<br>&nbsp</br>
-									<section ng-if='checkShip == "No"'>
+									<section ng-if='checkShip == "No"'></br>
 										<b>Địa chỉ (*):</b></br><input type="text" id="diachi2" style="font-size : 20px; width: 100%; height: 35px;"/> </br>&nbsp</br>
 										<b>Quận huyện (*):</b> (Phí ship có trong bảng)</br>
 										<select id="ddlViewBy" style="font-size : 20px; width: 100%; height: 35px;">
@@ -120,6 +119,13 @@
 											<option value="20" style="font-size : 20px">Các quận còn lại: 20k</option>
 										</select>
 										&nbsp</br>
+									</section></br>
+									<section ng-if='checkShip == "Yes"'>
+										<b>Địa điểm nhận vé đã đặt:</b> </br>
+										&nbsp&nbsp&nbsp1. CT2C2 khu tập thể đài phát sóng VOV Mễ Trì Hà Nội - Phan Trang: 01677460626</br>
+										&nbsp&nbsp&nbsp2. Cafe Bella Vita Nhà 37 khu biệt thự Huyndai 1 , Hà Đông - Viên Nhi: 0977188232</br>
+										&nbsp&nbsp&nbsp3. 34T khu đô thị Trung Hoà Nhân Chính -Thảo Ngân: 0919473800</br>
+										<b><a href="https://www.facebook.com/IridescentProm2016/photos/a.1144245765600649.1073741828.1142415402450352/1227137077311517/?type=3&theater&__mref=message_bubble" target="_blank">(Bấm vào đây để xem chi tiết)</a></b></br></br>
 									</section>
 									<div id="submitbtn" style="display: none;">
 									<center>Bạn hãy nhớ kiểm tra thật kỹ lại thông tin nhé.</br>Lưu ý: vé đã đặt không được hoàn trả lại.</br></center>
