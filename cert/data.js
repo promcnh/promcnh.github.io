@@ -14,17 +14,14 @@ function verifyMe() {
 		}
 		if(found) {
 			document.getElementById('resultText').style.display = "inline";
-			document.getElementById('errMess').style = "none";
 			document.getElementById('errMess').innerHTML = "";
 			showInfo();
 		} else {
-			document.getElementById('errMess').style = "inline";
 			document.getElementById('errMess').color = "red";
 			document.getElementById('errMess').innerHTML = "Cannot find this code</br>";
 			document.getElementById('resultText').style.display = "none";
 		}
     } else {
-		document.getElementById('errMess').style = "inline";
 		document.getElementById('errMess').color = "red";
 		document.getElementById('errMess').innerHTML = "Please fill in the verification code correctly</br>";
     }
