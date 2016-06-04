@@ -34,6 +34,7 @@ function showInfo() {
 	document.getElementById('cert_email').innerHTML= myData[myNum][4];
 	document.getElementById('cert_pos').innerHTML = myData[myNum][2] + " of the " + myData[myNum][3];
 	document.getElementById('cert_code').innerHTML = myData[myNum][0];
+	document.getElementById('onlineCopyLink').href = "online_copy/" + myNum + ".png";
 }
 
 var myData=[["9zw8","L&#234; Vi&#7879;t Phong","the leader","Logistics Team","vietphong279@gmail.com",""],
