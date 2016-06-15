@@ -34,7 +34,9 @@ function showInfo() {
 	document.getElementById('cert_email').innerHTML= myData[myNum][3];
 	document.getElementById('cert_pos').innerHTML = myData[myNum][5];
 	document.getElementById('cert_code').innerHTML = myData[myNum][0];
-	document.getElementById('onlineCopyLink').href = "online_copy/" + myNum + ".png";
+	if ((myNum+1) < 10)
+		document.getElementById('onlineCopyLink').href = "online_copy/cert_okay-0" + (myNum+1) + ".png";
+	else document.getElementById('onlineCopyLink').href = "online_copy/cert_okay-" + (myNum+1) + ".png";
 }
 
 var myData=[["9zw8","L&#234; Vi&#7879;t Phong","Male","vietphong279@gmail.com","27 Sep 1999","the leader of the Logistics Team"],
