@@ -4,7 +4,7 @@ function verifyMe() {
 	mycode = document.getElementById('enterCode').value;
     if ((mycode != "") && (mycode.length == 4)) {
 		var found = false;
-		for(myNum = 0; myNum < 42 ; myNum++) {
+		for(myNum = 0; myNum < myData.length ; myNum++) {
 			//console.log(myData[myNum][0]);
 			if(myData[myNum][0] == mycode.toLowerCase()) {
 				//alert("num"+myNum);
@@ -81,4 +81,4 @@ var myData=[["9zw8","L&#234; Vi&#7879;t Phong","Male","vietphong279@gmail.com","
 ["qhh3","H&#224; B&#7843;o Ng&#7885;c ","Female","habaongoc.131100@yahoo.com.vn","13 Nov 2000","a member of the Finance Team"],
 ["0nap","L&#234; Th&#7883; Huy&#7873;n ","Female","lehuyen303507@gmail.com","30 Mar 2000","a member of the Finance Team"],
 ["ge2c","&#272;o&#224;n Tr&#7847;n Y&#7871;n Chi ","Female","christinedoan1312000@gmail.com","13 Jan 2000","a member of the Finance Team"],
-["w0vb","Nghi&#234;m Th&#7883; Xu&#226;n Hi&#7873;n ","Female","","","the master of ceremony for the Iridescent Prom"]];
+["w0vb","Nghi&#234;m Th&#7883; Xu&#226;n Hi&#7873;n ","Female","hienchipmon@gmail.com","21 Jul 2000","the master of ceremony for the Iridescent Prom"]];
