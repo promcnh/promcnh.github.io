@@ -21,7 +21,9 @@ main {
 }
 
 header {
-  height: 80vh;
+  height: 60vh;
+  width:100%;
+  padding:0px;
   background: url("img/title_big.jpg");
   background-size: cover;
   background-position: center center;
@@ -29,8 +31,8 @@ header {
   vertical-align: top;
   -webkit-transform-origin: center top;
           transform-origin: center top;
-  -webkit-transform: translateZ(-1px) scale(2);
-          transform: translateZ(-1px) scale(2);
+  -webkit-transform: translateZ(-1px) scale(2.6);
+          transform: translateZ(-1px) scale(2.6);
 }
 
 section {
@@ -38,7 +40,6 @@ section {
   background: #eeeeee;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
-  padding: 10px 0;
 }
 
 h1 {
@@ -48,11 +49,12 @@ h1 {
 }
 
 p {
+  text-align:left;
   width:80%;
   background: white;
   font-size: 24px;
   font-size: 300;
-  padding: 0 0px;
+  padding:1em;
   box-shadow: 
 		0 1px 45px rgba(0,0,0, 0.18),
 		0 1px 10px rgba(0,0,0, 0.28); 
