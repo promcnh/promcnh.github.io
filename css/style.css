@@ -1,0 +1,173 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:700&subset=latin,latin-ext,vietnamese);
+
+body {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+p {
+	padding: 10px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+h1, h2 {
+	width: 80%;
+	margin: 25px auto 5px;
+}
+
+.header-image{
+		position:relative;
+		background:url('../cover.png');
+		background-size:cover;
+		background-position: center;
+		min-height:300px;
+		padding-bottom:100px;
+		overflow:hidden;
+}
+
+.header-image:after{
+		content:'';
+		position:absolute;
+		bottom:0; left:0;
+		border-left:70vw solid #fff;
+		border-right:30vw solid #fff;
+		border-top:120px solid transparent;
+}
+
+/* NAV-BAR */
+
+.menu-list {
+	list-style: none;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 960px;
+	padding: 0 2%;
+}
+
+.nav-bar {
+	position: fixed;
+	min-width: 100%;
+	z-index: 999;
+}
+
+.fade-background {	
+	 background-color: #3591cc;
+	 background-color: rgba(255,255,255,1);
+	webkit-box-shadow: 0 7px 5px -5px rgba(93, 93, 93, 0.85);
+		-moz-box-shadow: 0 7px 5px -5px rgba(93, 93, 93, 0.85);
+		box-shadow: 0 7px 5px -5px rgba(93, 93, 93, 0.85);
+	 -webkit-transition: background-color 1.5s;
+		transition: background-color 1.5s;
+	-webkit-transition: box-shadow 1.5s;
+		transition: box-shadow 1.5s;
+}
+
+.fade-transparent {
+	 background-color: transparent;
+	 -webkit-transition: background-color 1s;
+	 transition: background-color 1s;
+}
+
+.text-fade-in {
+	color: rgba(0,0,0,.8);
+	-webkit-transition: color 1.5s;
+	transition: color 1.5s;
+}
+
+.text-top {
+	color: rgba(54,49,53,.8);
+}
+
+.logo {
+	background-color: rgba(255,255,255,0);
+	text-align: center;
+	padding: 5px;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	box-sizing: border-box;
+	display: inline-block;
+	height: 45px;
+	margin: 1em 0;
+	width: 95px;
+}
+
+.logo-top {
+	border: 3px solid #363135;
+}
+
+
+.logo-fade-in {
+	border: 3px solid #000;
+	-webkit-transition: border 1s;
+	transition: border 1s;
+}
+
+
+.logo-text-top {
+	color: rgba(54,49,53,.8);
+}
+
+.logo-text-fade-in {
+	color: rgba(54,49,53,.8);
+	-webkit-transition: color 1s;
+	transition: color 1s;
+}
+
+ .menu-list {
+	display: flex;
+	justify-content: space-between;
+	list-style-type: none;
+	width: 50%;
+}
+
+.nav-link {
+	letter-spacing: 0.3em;
+	font-size: 1.1em;
+	font-weight: 400;
+	text-decoration: none;
+	transition: all .2s ease;
+}
+
+.text-top:hover {
+	color: rgba(54,49,53,.8);
+}
+
+.text-fade-in:hover {
+	color: rgba(0,0,0,1);
+}
+nav li {
+	display: inline-block;
+}
+nav #menu-toggle {
+	display: none;
+}
+nav .label-toggle {
+	display: none;
+}
+nav .wrapper {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+#menu-toggle {
+	display: none;
+}
+	
+.label-toggle {
+	display: none;
+}
+
+@media screen and (max-width: 768px) {
+	
+	.menu-list {
+		display: none;
+	}
+	
+	
+}
+
