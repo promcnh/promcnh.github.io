@@ -14,9 +14,11 @@
 	
 	<link rel='stylesheet prefetch' href='css/bootstrap/css/bootstrap.min.css'>
 	<link rel='stylesheet prefetch' href='css/font-awesome/css/font-awesome.min.css'>
+	<link rel='stylesheet prefetch' href="css/animate.css">
 	<link rel="stylesheet" class="cp-pen-styles" type="text/css" href="css/style.css">
 <style class="cp-pen-styles">
 </style></head><body>
+<script src='/ga.js'></script>
 
 <div class="header-image">
 	<nav class="nav-bar .fade-transparent">
@@ -33,6 +35,7 @@
 		</nav>
 	</nav>
  </div>
+<div class="anim_main">
 <h1>LỜI GIỚI THIỆU</h1>
 <p>Bạn là vì sao nào trong 7 vì tinh tú?</p>
 <p>Bạn là nốt nhạc nào trong bản giao hưởng cuộc đời? </p>
@@ -59,9 +62,13 @@
 <br/>
 <center style="color:gray">By Nui Nui. (c) SAC 2016</center>
 <br/>
+</div>
 
 <script src='/jquery.min.js'></script>
-<script>$(function () {
+<script>
+$('.header-image').addClass('animated fadeInDown');
+$('.anim_main').addClass('animated fadeInUp');
+$(function () {
 		var header = $('.nav-bar');
 		var logo = $('.logo');
 		var logoText = $('#logo-text');
