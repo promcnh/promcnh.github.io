@@ -88,20 +88,24 @@ firebase.auth().onAuthStateChanged(function(user) {
 		firebase.database().ref(getParameterByName("ticket") + '/' + getParameterByName("id")).on('value',
 			function(snapshot) {
 				$("#infoLoading").slideUp();
-				html = "Họ và tên: <span class=\"big\">"+snapshot.val().b+"</span><br/>";
-				if (snapshot.val().d != 100)
-					html += "Lớp: <span class=\"big\">"+khoa(snapshot.val().d) +" " + chuyen(snapshot.val().c)+"</span><br/>";
-				if (snapshot.val().b1 == "")
-					html += "Loại vé: <span class=\"big\">vé "+(getParameterByName("ticket")=='01'? 'đơn' : 'đôi')+"</span><br/>";
-				else
-					html += "Loại vé: <span class=\"big\">vé đôi đặc biệt</span><br/>"+
-							"Tên ghi trên vé: "+snapshot.val().b1+" & "+snapshot.val().b2+"<br/>";
-				html += "--------<br/>"
-				html += "SĐT: "+snapshot.val().e+"<br/>"+
-					"Email: "+snapshot.val().f+"<br/>";
-				if (snapshot.val().g != "")
-					html += "Địa chỉ: "+snapshot.val().g+"<br/>";
-				$("#ticketInfo").html(html);
+				if (snapshot.val()==null) {
+					$("#ticketInfo").html("Không tìm thấy thông tin. Có thể do vé của bạn đã bị xóa.");
+				} else {
+					html = "Họ và tên: <span class=\"big\">"+snapshot.val().b+"</span><br/>";
+					if (snapshot.val().d != 100)
+						html += "Lớp: <span class=\"big\">"+khoa(snapshot.val().d) +" " + chuyen(snapshot.val().c)+"</span><br/>";
+					if (snapshot.val().b1 == "")
+						html += "Loại vé: <span class=\"big\">vé "+(getParameterByName("ticket")=='01'? 'đơn' : 'đôi')+"</span><br/>";
+					else
+						html += "Loại vé: <span class=\"big\">vé đôi đặc biệt</span><br/>"+
+								"Tên ghi trên vé: "+snapshot.val().b1+" & "+snapshot.val().b2+"<br/>";
+					html += "--------<br/>"
+					html += "SĐT: "+snapshot.val().e+"<br/>"+
+						"Email: "+snapshot.val().f+"<br/>";
+					if (snapshot.val().g != "")
+						html += "Địa chỉ: "+snapshot.val().g+"<br/>";
+					$("#ticketInfo").html(html);
+				}
 			}
 		);
 	} else {
