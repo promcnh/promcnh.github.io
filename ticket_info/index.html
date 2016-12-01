@@ -85,7 +85,7 @@ firebase.auth().signInWithEmailAndPassword("a@info.com", "ticketInfo")
 
 firebase.auth().onAuthStateChanged(function(user) {
 	if (user) {
-		firebase.database().ref(getParameterByName("ticket") + '/' + getParameterByName("id")).on('value',
+		firebase.database().ref('ticket/' + getParameterByName("id")).on('value',
 			function(snapshot) {
 				$("#infoLoading").slideUp();
 				if (snapshot.val()==null) {
@@ -95,7 +95,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 					if (snapshot.val().d != 100)
 						html += "Lớp: <span class=\"big\">"+khoa(snapshot.val().d) +" " + chuyen(snapshot.val().c)+"</span><br/>";
 					if (snapshot.val().b1 == "")
-						html += "Loại vé: <span class=\"big\">vé "+(getParameterByName("ticket")=='01'? 'đơn' : 'đôi')+"</span><br/>";
+						html += "Loại vé: <span class=\"big\">vé "+(snapshot.val().t=='ticket01'? 'đơn' : 'đôi')+"</span><br/>";
 					else
 						html += "Loại vé: <span class=\"big\">vé đôi đặc biệt</span><br/>"+
 								"Tên ghi trên vé: "+snapshot.val().b1+" & "+snapshot.val().b2+"<br/>";
