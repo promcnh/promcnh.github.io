@@ -56,7 +56,7 @@
 		<img id="infoGif" src="img/loading.gif" height="50" width="50">
 		<h3 id="infoText">Loading...</h3>
 	</center>
-	<p style="font-size: 1.4em; font-weight: 100; margin:0 auto;" id="ticketInfo">
+	<p style="font-size: 1.2em; font-weight: 100; margin:0 auto;" id="ticketInfo">
 	</p>
   </div>
   <div class="col-md-2 hidden-sm hidden-xs"></div>
@@ -99,11 +99,26 @@ firebase.auth().onAuthStateChanged(function(user) {
 					else
 						html += "Loại vé: <span class=\"big\">vé đôi đặc biệt</span><br/>"+
 								"Tên ghi trên vé: "+snapshot.val().b1+" & "+snapshot.val().b2+"<br/>";
+								
+					//////////
 					html += "--------<br/>"
 					html += "SĐT: "+snapshot.val().e+"<br/>"+
 						"Email: "+snapshot.val().f+"<br/>";
 					if (snapshot.val().g != "")
 						html += "Địa chỉ: "+snapshot.val().g+"<br/>";
+					
+					//////////
+					var shipPrice = getShipPrice(snapshot.val());
+					var ticketPrice = snapshot.val().t=='ticket01'? 50 : 100;
+					html += "--------<br/>";
+					if (shipPrice > 0) {
+						html += "Phí ship: " + shipPrice + ".000đ<br/>";
+						html += "Tổng giá vé: " + //ticketPrice + ".000đ + " + shipPrice + ".000đ = " +
+								(shipPrice+ticketPrice) + ".000đ<br/>";
+					} else {
+						html += "Tổng giá vé: " + ticketPrice + ".000đ<br/>";
+					}
+					html += "<br/>Nếu thông tin trên có sai sót, hãy nhắn tin cho chúng mình qua <a href=\"https://www.facebook.com/msqrd.prom17/\" target=\"_blank\">Fanpage</a><br/>"
 					$("#ticketInfo").html(html);
 				}
 			}
@@ -112,6 +127,15 @@ firebase.auth().onAuthStateChanged(function(user) {
 		//alert("có lỗi xảy ra!");
 	}
 });
+
+function getShipPrice(obj) {
+	if (obj.h === "5" ) return 5;
+	else if (obj.h === "10") return 10;
+	else if (obj.h === "25") return 25;
+	else if (obj.h === "26") return 25;
+	else if (obj.h === "20") return 20;
+	else return 0;
+}
 
 function getParameterByName(name) {
     url = window.location.href;
