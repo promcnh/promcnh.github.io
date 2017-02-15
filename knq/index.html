@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Dự thi King & Queen - Masquerade Prom 2017</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta property="og:image" content="fb.jpg" />
+	<meta property="og:content" content="Đăng ký ngay!" />
+	<style>
+	body {
+		background: url('img/background.jpg');
+	}
+	.logo {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 70%;
+	}
+	.black {
+		display: none;
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		background: black;
+		z-index: 10;
+	}
+	</style>
+</head>
+<body>
+	<div class="logo">
+		<img src="img/msqrd_prom.gif"></img>
+	</div>
+	<div id="black" class="black"></div>
+</body>
+ <script src="js/jquery.min.js"></script>
+<script>
+	setTimeout(function() {
+		$('#black').fadeIn(1000);
+		setTimeout(function() {window.location.href = "form1.html"}, 1000);
+	}, 4500);
+</script>
+</html>

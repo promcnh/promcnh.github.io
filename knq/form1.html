@@ -1,0 +1,283 @@
+<html>
+
+<head>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/util.js"></script>
+    <title>Dự thi King & Queen - Masquerade Prom 2017</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta property="og:image" content="fb.jpg" />
+	<meta property="og:content" content="Đăng ký ngay!" />
+    <link rel="stylesheet" href="js/style.css">
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+</head>
+
+<body class="">
+    <div id="wrapper">
+        <header id="header" style="display: flex;">
+            <div class="logo"><span class="icon fa-diamond"></span></div>
+            <div class="content">
+                <div class="inner">
+					<h4>Masquerade Prom 2017</h4>
+                    <h1>KING & QUEEN</h1>
+                    <p>Trong không gian đầy sức huyền ảo và mê hoặc của Masquerade Prom, King và Queen sẽ được đội vương miện đầy quyền uy và trở thành trung tâm của tất cả những lữ khách đeo mặt nạ xung quanh. Một không gian tuyệt vời và lãng mạn tưởng như chỉ có trong thơ ca như vậy, bạn đã sẵn sàng để trải nghiệm?</p>
+                </div>
+            </div>
+            <nav class="use-middle">
+                <ul>
+                    <li><a href="#contact">Đăng ký ngay</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="main" style="display: none;">
+			<article id="contact" style="display: none;" class="">
+                <h2 class="major">King & Queen</h2>
+                <form method="post" action="#">
+                    <div class="field half first">
+						<label for="name">Họ và tên của bạn</label><input type="text" name="name" id="entry">
+					</div>
+                    <div class="field half">
+						<label for="email">...và partner</label><input type="text" name="email" id="entry">
+					</div>
+					---------------<br/>
+					<div class="field half first">
+						<label for="name">Ngày tháng năm sinh</label><input type="text" name="name" id="entry" placeholder="dd/mm/yyyy">
+					</div>
+                    <div class="field half">
+						<label for="name">...và partner</label><input type="text" name="name" id="entry" placeholder="dd/mm/yyyy">
+					</div>
+					---------------<br/>
+					<div class="field half first">
+						<label for="name">Lớp - khóa</label><input type="text" name="name" id="entry" placeholder="">
+					</div>
+                    <div class="field half">
+						<label for="name"><br/></label><input type="text" name="name" id="entry" placeholder="">
+					</div>
+					---------------<br/>
+					<div class="field half first">
+						<label for="name">Link facebook</label><input type="text" name="name" id="entry" placeholder="">
+					</div>
+                    <div class="field half">
+						<label for="name"><br/></label><input type="text" name="name" id="entry" placeholder="">
+					</div>
+					---------------<br/>
+					<div class="field half first">
+						<label for="name">Số điện thoại</label><input type="text" name="name" id="entry" placeholder="">
+					</div>
+                    <div class="field half">
+						<label for="name"><br/></label><input type="text" name="name" id="entry" placeholder="">
+					</div>
+					---------------<br/>
+					<div class="field">
+						<label for="name">Email của 1 trong 2 bạn</label><input type="text" name="name" id="entry" placeholder="">
+					</div>
+					
+					
+                    <div class="field"><label for="message">Lí do bạn đến với cuộc thi King & Queen:</label><textarea name="message" id="message" rows="4"></textarea></div>
+					<div class="field"><label for="message">Bạn nghĩ mình sẽ làm gì để chiến thắng và trở thành King/Queen:</label><textarea name="message" id="message" rows="4"></textarea></div>
+					<div class="field"><label for="message">Hãy dẫn link bức ảnh đẹp nhất của bạn:</label><textarea name="message" id="message" rows="2"></textarea>
+					<p><b>Lưu ý:</b> Bạn có thể gửi trên 2 ảnh. BTC sẽ chọn bức ảnh nào đẹp nhất để đăng vào phần dự thi của bạn. Hãy cân nhắc lựa chọn và gửi ảnh về cho BTC Masquerade Prom 2017 vì bức ảnh này sẽ đại diện cho bạn trong suốt quá trình tham gia cuộc thi.</p>
+					<div class="field"><label for="message">Bạn còn câu hỏi nào cho BTC không?</label><textarea name="message" id="message" rows="2" placeholder="(không bắt buộc)"></textarea>
+					</div>
+					<br/>
+                    <ul class="actions">
+                        <li><input type="submit" value="Gửi đăng ký" class="special"></li>
+                        <!--li><input type="reset" value="Reset"></li-->
+                    </ul>
+                </form>
+                <!--ul class="icons">
+                    <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+                </ul-->
+                <div class="close">Close</div>
+            </article>
+		</div>
+        <footer id="footer" style="display: block;">
+            <p class="copyright">Designed by Nui Nui</p>
+        </footer>
+    </div>
+    <div id="bg"></div>
+    <script>
+        (function($) {
+            skel.breakpoints({
+                xlarge: '(max-width: 1680px)',
+                large: '(max-width: 1280px)',
+                medium: '(max-width: 980px)',
+                small: '(max-width: 736px)',
+                xsmall: '(max-width: 480px)',
+                xxsmall: '(max-width: 360px)'
+            });
+            $(function() {
+                var $window = $(window),
+                    $body = $('body'),
+                    $wrapper = $('#wrapper'),
+                    $header = $('#header'),
+                    $footer = $('#footer'),
+                    $main = $('#main'),
+                    $main_articles = $main.children('article');
+                $body.addClass('is-loading');
+                $window.on('load', function() {
+                    window.setTimeout(function() {
+                        $body.removeClass('is-loading');
+                    }, 100);
+                });
+                $('form').placeholder();
+                if (skel.vars.IEVersion < 12) {
+                    var flexboxFixTimeoutId;
+                    $window.on('resize.flexbox-fix', function() {
+                        clearTimeout(flexboxFixTimeoutId);
+                        flexboxFixTimeoutId = setTimeout(function() {
+                            if ($wrapper.prop('scrollHeight') > $window.height()) $wrapper.css('height', 'auto');
+                            else $wrapper.css('height', '100vh');
+                        }, 250);
+                    }).triggerHandler('resize.flexbox-fix');
+                }
+                var $nav = $header.children('nav'),
+                    $nav_li = $nav.find('li');
+                if ($nav_li.length % 2 == 0) {
+                    $nav.addClass('use-middle');
+                    $nav_li.eq(($nav_li.length / 2)).addClass('is-middle');
+                }
+                var delay = 325,
+                    locked = false;
+                $main._show = function(id, initial) {
+                    var $article = $main_articles.filter('#' + id);
+                    if ($article.length == 0) return;
+                    if (locked || (typeof initial != 'undefined' && initial === true)) {
+                        $body.addClass('is-switching');
+                        $body.addClass('is-article-visible');
+                        $main_articles.removeClass('active');
+                        $header.hide();
+                        $footer.hide();
+                        $main.show();
+                        $article.show();
+                        $article.addClass('active');
+                        locked = false;
+                        setTimeout(function() {
+                            $body.removeClass('is-switching');
+                        }, (initial ? 1000 : 0));
+                        return;
+                    }
+                    locked = true;
+                    if ($body.hasClass('is-article-visible')) {
+                        var $currentArticle = $main_articles.filter('.active');
+                        $currentArticle.removeClass('active');
+                        setTimeout(function() {
+                            $currentArticle.hide();
+                            $article.show();
+                            setTimeout(function() {
+                                $article.addClass('active');
+                                $window.scrollTop(0).triggerHandler('resize.flexbox-fix');
+                                setTimeout(function() {
+                                    locked = false;
+                                }, delay);
+                            }, 25);
+                        }, delay);
+                    } else {
+                        $body.addClass('is-article-visible');
+                        setTimeout(function() {
+                            $header.hide();
+                            $footer.hide();
+                            $main.show();
+                            $article.show();
+                            setTimeout(function() {
+                                $article.addClass('active');
+                                $window.scrollTop(0).triggerHandler('resize.flexbox-fix');
+                                setTimeout(function() {
+                                    locked = false;
+                                }, delay);
+                            }, 25);
+                        }, delay);
+                    }
+                };
+                $main._hide = function(addState) {
+                    var $article = $main_articles.filter('.active');
+                    if (!$body.hasClass('is-article-visible')) return;
+                    if (typeof addState != 'undefined' && addState === true) history.pushState(null, null, '#');
+                    if (locked) {
+                        $body.addClass('is-switching');
+                        $article.removeClass('active');
+                        $article.hide();
+                        $main.hide();
+                        $footer.show();
+                        $header.show();
+                        $body.removeClass('is-article-visible');
+                        locked = false;
+                        $body.removeClass('is-switching');
+                        $window.scrollTop(0).triggerHandler('resize.flexbox-fix');
+                        return;
+                    }
+                    locked = true;
+                    $article.removeClass('active');
+                    setTimeout(function() {
+                        $article.hide();
+                        $main.hide();
+                        $footer.show();
+                        $header.show();
+                        setTimeout(function() {
+                            $body.removeClass('is-article-visible');
+                            $window.scrollTop(0).triggerHandler('resize.flexbox-fix');
+                            setTimeout(function() {
+                                locked = false;
+                            }, delay);
+                        }, 25);
+                    }, delay);
+                };
+                $main_articles.each(function() {
+                    var $this = $(this);
+                    $('<div class="close">Close</div>').appendTo($this).on('click', function() {
+                        location.hash = '';
+                    });
+                    $this.on('click', function(event) {
+                        event.stopPropagation();
+                    });
+                });
+                $body.on('click', function(event) {
+                    if ($body.hasClass('is-article-visible')) $main._hide(true);
+                });
+                $window.on('keyup', function(event) {
+                    switch (event.keyCode) {
+                        case 27:
+                            if ($body.hasClass('is-article-visible')) $main._hide(true);
+                            break;
+                        default:
+                            break;
+                    }
+                });
+                $window.on('hashchange', function(event) {
+                    if (location.hash == '' || location.hash == '#') {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        $main._hide();
+                    } else if ($main_articles.filter(location.hash).length > 0) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        $main._show(location.hash.substr(1));
+                    }
+                });
+                if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+                else {
+                    var oldScrollPos = 0,
+                        scrollPos = 0,
+                        $htmlbody = $('html,body');
+                    $window.on('scroll', function() {
+                        oldScrollPos = scrollPos;
+                        scrollPos = $htmlbody.scrollTop();
+                    }).on('hashchange', function() {
+                        $window.scrollTop(oldScrollPos);
+                    });
+                }
+                $main.hide();
+                $main_articles.hide();
+                if (location.hash != '' && location.hash != '#') $window.on('load', function() {
+                    $main._show(location.hash.substr(1), true);
+                });
+            });
+        })(jQuery);
+    </script>
+</body>
+
+</html>
