@@ -34,7 +34,7 @@
         <div id="main" style="display: none;">
 			<article id="contact" style="display: none;" class="">
                 <h2 class="major">King & Queen</h2>
-                <form method="post" action="#">
+                <form method="post" action="#" id="myform">
                     <div class="field half first">
 						<label for="name">Họ và tên của bạn</label><input type="text" name="name" id="quest1a">
 					</div>
@@ -78,8 +78,9 @@
                 <div class="close">Close</div>
             </article>
             <article id="done" style="display: none;" class="">
-                <h2 class="major">Chúc mừng!</h2>
-                <p>Bạn đã đăng ký thành công!<br/>Chúng mình sẽ sớm liên lạc lại với bạn. Xin cảm ơn bạn!</p>
+                <h2 class="major">Thành công!</h2>
+                <p>Bạn đã gửi bản đăng ký. Một email xác nhận đã được gửi tới email do bạn cung cấp.<br/>
+				Xin cảm ơn bạn!</p>
                 <div class="close">Close</div>
             </article>
 		</div>
@@ -150,6 +151,7 @@
 					success: function (data) {
 						if(data.substring(0,15)=='<!DOCTYPE html>') {
 							window.location.href = "#done";
+							document.getElementById("myform").reset();
 							$('#send_nui').show();
 							$('#sending').hide();
 						} else {
