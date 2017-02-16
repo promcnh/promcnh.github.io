@@ -43,6 +43,11 @@
 	$.ajax({
 		url: "https://script.google.com/macros/s/AKfycbzwSI3EthSHCFago5jHXswybJmMasiV4DV-viL8Sywsktmh0jI/exec?id=1ovHoiZ2RbwCPJZeHn4-3BHdfh7OBo7ov16wcjQZlL3I",
 		type: "GET",
+		cache: false,
+		crossDomain: true,
+		xhrFields: {
+			withCredentials: true
+		},
 		success: function (data) {
 			console.log(data);
 		}

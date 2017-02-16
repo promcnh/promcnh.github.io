@@ -36,54 +36,56 @@
                 <h2 class="major">King & Queen</h2>
                 <form method="post" action="#">
                     <div class="field half first">
-						<label for="name">Họ và tên của bạn</label><input type="text" name="name" id="entry">
+						<label for="name">Họ và tên của bạn</label><input type="text" name="name" id="quest1a">
 					</div>
                     <div class="field half">
-						<label for="email">...và partner</label><input type="text" name="email" id="entry">
+						<label for="email">...và partner</label><input type="text" name="email" id="quest1b">
 					</div>
 					---------------<br/>
 					<div class="field half first">
-						<label for="name">Ngày tháng năm sinh</label><input type="text" name="name" id="entry" placeholder="dd/mm/yyyy">
+						<label for="name">Ngày tháng năm sinh</label><input type="text" name="name" id="quest2a" placeholder="dd/mm/yyyy">
 					</div>
                     <div class="field half">
-						<label for="name">...và partner</label><input type="text" name="name" id="entry" placeholder="dd/mm/yyyy">
+						<label for="name">...và partner</label><input type="text" name="name" id="quest2b" placeholder="dd/mm/yyyy">
 					</div>
 					---------------<br/>
 					<div class="field half first">
-						<label for="name">Lớp - khóa</label><input type="text" name="name" id="entry" placeholder="">
+						<label for="name">Lớp - khóa</label><input type="text" name="name" id="quest3a" placeholder="">
 					</div>
                     <div class="field half">
-						<label for="name"><br/></label><input type="text" name="name" id="entry" placeholder="">
+						<label for="name"><br/></label><input type="text" name="name" id="quest3b" placeholder="">
 					</div>
 					---------------<br/>
 					<div class="field half first">
-						<label for="name">Link facebook</label><input type="text" name="name" id="entry" placeholder="">
+						<label for="name">Link facebook</label><input type="text" name="name" id="quest4a" placeholder="">
 					</div>
                     <div class="field half">
-						<label for="name"><br/></label><input type="text" name="name" id="entry" placeholder="">
+						<label for="name"><br/></label><input type="text" name="name" id="quest4b" placeholder="">
 					</div>
 					---------------<br/>
 					<div class="field half first">
-						<label for="name">Số điện thoại</label><input type="text" name="name" id="entry" placeholder="">
+						<label for="name">Số điện thoại</label><input type="text" name="name" id="quest5a" placeholder="">
 					</div>
                     <div class="field half">
-						<label for="name"><br/></label><input type="text" name="name" id="entry" placeholder="">
+						<label for="name"><br/></label><input type="text" name="name" id="quest5b" placeholder="">
 					</div>
 					---------------<br/>
 					<div class="field">
-						<label for="name">Email của 1 trong 2 bạn</label><input type="text" name="name" id="entry" placeholder="">
+						<label for="name">Email của 1 trong 2 bạn</label><input type="text" name="name" id="quest6" placeholder="">
 					</div>
 					
 					
-                    <div class="field"><label for="message">Lí do bạn đến với cuộc thi King & Queen:</label><textarea name="message" id="message" rows="4"></textarea></div>
-					<div class="field"><label for="message">Bạn nghĩ mình sẽ làm gì để chiến thắng và trở thành King/Queen:</label><textarea name="message" id="message" rows="4"></textarea></div>
-					<div class="field"><label for="message">Hãy dẫn link bức ảnh đẹp nhất của bạn:</label><textarea name="message" id="message" rows="2"></textarea>
+                    <div class="field"><label for="message">Lí do bạn đến với cuộc thi King & Queen:</label><textarea name="message" id="quest7" rows="4"></textarea></div>
+					<div class="field"><label for="message">Bạn nghĩ mình sẽ làm gì để chiến thắng và trở thành King/Queen:</label><textarea name="message" id="quest8" rows="4"></textarea></div>
+					<div class="field"><label for="message">Hãy dẫn link bức ảnh đẹp nhất của bạn:</label><textarea name="message" id="quest9" rows="2"></textarea>
 					<p><b>Lưu ý:</b> Bạn có thể gửi trên 2 ảnh. BTC sẽ chọn bức ảnh nào đẹp nhất để đăng vào phần dự thi của bạn. Hãy cân nhắc lựa chọn và gửi ảnh về cho BTC Masquerade Prom 2017 vì bức ảnh này sẽ đại diện cho bạn trong suốt quá trình tham gia cuộc thi.</p>
-					<div class="field"><label for="message">Bạn còn câu hỏi nào cho BTC không?</label><textarea name="message" id="message" rows="2" placeholder="(không bắt buộc)"></textarea>
+					<div class="field"><label for="message">Bạn còn câu hỏi nào cho BTC không?</label><textarea name="message" id="quest10" rows="2" placeholder="(không bắt buộc)"></textarea>
 					</div>
 					<br/>
+					<b id="not_filled" style="display:none"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> LỖI: BẠN CHƯA ĐIỀN HẾT CÁC PHẦN CẦN ĐIỀN<br/><br/></b>
                     <ul class="actions">
-                        <li><input type="submit" value="Gửi đăng ký" class="special"></li>
+                        <li><button type="button" onclick="sendNui()" class="special" id="send_nui">Gửi đăng ký</button></li>
+						<li><b id="sending" style="display:none"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>Đang gửi...</b></li>
                         <!--li><input type="reset" value="Reset"></li-->
                     </ul>
                 </form>
@@ -107,10 +109,97 @@
     </div>
     <div id="bg"></div>
     <script>
-	$.ajax({
-		url: "http://cors-anywhere.herokuapp.com",
-		type: "GET"
-	});
+		$.ajax({
+			url: "http://cors-anywhere.herokuapp.com",
+			type: "GET"
+		});
+		function sendNui() {
+			var q1a= $('#quest1a').val();
+			var q1b= $('#quest1b').val();
+			var q2a= $('#quest2a').val();
+			var q2b= $('#quest2b').val();
+			var q3a= $('#quest3a').val();
+			var q3b= $('#quest3b').val();
+			var q4a= $('#quest4a').val();
+			var q4b= $('#quest4b').val();
+			var q5a= $('#quest5a').val();
+			var q5b= $('#quest5b').val();
+			var q6 = $('#quest6' ).val();
+			var q7 = $('#quest7' ).val();
+			var q8 = $('#quest8' ).val();
+			var q9 = $('#quest9' ).val();
+			var q10= $('#quest10').val();
+			
+			if (
+				isEmpty(q1a) ||
+				isEmpty(q1b) ||
+				isEmpty(q2a) ||
+				isEmpty(q2b) ||
+				isEmpty(q3a) ||
+				isEmpty(q3b) ||
+				isEmpty(q4a) ||
+				isEmpty(q4b) ||
+				isEmpty(q5a) ||
+				isEmpty(q5b) ||
+				isEmpty(q6 ) ||
+				isEmpty(q7 ) ||
+				isEmpty(q8 ) ||
+				isEmpty(q9 )
+			) {
+				$('#not_filled').show();
+				setTimeout(function() {$('#not_filled').hide();}, 6000);
+			} else {
+				$('#not_filled').hide();
+				$('#sending').show();
+				$('#send_nui').hide();
+				var data = {
+					"entry.434717860" : q1a,
+					"entry.954403451" : q1b,
+					"entry.705861878" : "DOB " + q2a + " | " + q2b + " \n"
+						+"Lớp: " + q3a + " | " + q3b + " \n"
+						+"link fb: " + q4a + " \n" + q4b + " \n"
+						+"SDT: " + q5a + " | " + q5b + " \n"
+						+"email: " + q6 + " \n"
+						+"•Lý do: " + q7 + " \n"
+						+"•Bạn sẽ làm gì? " + q8 + " \n"
+						+"•link ảnh: " + q9 + " \n"
+						+"•câu hỏi cho BTC: " + q10
+				};
+				$.ajaxPrefilter( function (options) {
+					if (options.crossDomain && jQuery.support.cors) {
+						var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+						options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
+						console.log(options.url)
+					}
+				});
+				$.ajax({
+					url: "https://docs.google.com/forms/d/1gGrraWEeRNVY-eSuBRDp3z4FnW4ExGHI-DIO8Eqar1s/formResponse",
+					data: data,
+					type: "POST",
+					timeout: 15000,
+					success: function (data) {
+						if(data.substring(0,15)=='<!DOCTYPE html>') {
+							window.location.href = "#done";
+							$('#send_nui').show();
+							$('#sending').hide();
+						} else {
+							alert("Có lỗi xảy ra, xin hãy thử lại \n"+thrownError);
+							$('#send_nui').show();
+							$('#sending').hide();
+						}
+					},
+					error: function (xhr, ajaxOptions, thrownError) {
+						alert("Có lỗi xảy ra, xin hãy thử lại \n"+thrownError);
+						$('#send_nui').show();
+						$('#sending').hide();
+					}
+				});
+				//console.log(data);
+			}
+		}
+		function isEmpty(obj) {
+			return (obj == null || obj == "" || obj == undefined);
+		}
         (function($) {
             skel.breakpoints({
                 xlarge: '(max-width: 1680px)',
