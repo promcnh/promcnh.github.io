@@ -39,41 +39,21 @@
 						<label for="name">Họ và tên của bạn</label><input type="text" name="name" id="quest1a">
 					</div>
                     <div class="field half">
-						<label for="email">...và partner</label><input type="text" name="email" id="quest1b">
-					</div>
-					---------------<br/>
-					<div class="field half first">
 						<label for="name">Ngày tháng năm sinh</label><input type="text" name="name" id="quest2a" placeholder="dd/mm/yyyy">
 					</div>
-                    <div class="field half">
-						<label for="name">...và partner</label><input type="text" name="name" id="quest2b" placeholder="dd/mm/yyyy">
-					</div>
-					---------------<br/>
 					<div class="field half first">
 						<label for="name">Lớp - khóa</label><input type="text" name="name" id="quest3a" placeholder="">
 					</div>
-                    <div class="field half">
-						<label for="name"><br/></label><input type="text" name="name" id="quest3b" placeholder="">
-					</div>
-					---------------<br/>
-					<div class="field half first">
-						<label for="name">Link facebook</label><input type="text" name="name" id="quest4a" placeholder="">
-					</div>
-                    <div class="field half">
-						<label for="name"><br/></label><input type="text" name="name" id="quest4b" placeholder="">
-					</div>
-					---------------<br/>
-					<div class="field half first">
+					<div class="field half">
 						<label for="name">Số điện thoại</label><input type="text" name="name" id="quest5a" placeholder="">
 					</div>
-                    <div class="field half">
-						<label for="name"><br/></label><input type="text" name="name" id="quest5b" placeholder="">
+                    <div class="field">
+						<label for="name">Link facebook</label><input type="text" name="name" id="quest4a" placeholder="">
 					</div>
-					---------------<br/>
 					<div class="field">
-						<label for="name">Email của 1 trong 2 bạn</label><input type="text" name="name" id="quest6" placeholder="">
+						<label for="name">Email của bạn</label><input type="text" name="name" id="quest6" placeholder="">
+						<p>Chúng mình sẽ gửi 1 email xác nhận cho bạn sau khi đơn này được ghi nhận.</p>
 					</div>
-					
 					
                     <div class="field"><label for="message">Lí do bạn đến với cuộc thi King & Queen:</label><textarea name="message" id="quest7" rows="4"></textarea></div>
 					<div class="field"><label for="message">Bạn nghĩ mình sẽ làm gì để chiến thắng và trở thành King/Queen:</label><textarea name="message" id="quest8" rows="4"></textarea></div>
@@ -115,15 +95,10 @@
 		});
 		function sendNui() {
 			var q1a= $('#quest1a').val();
-			var q1b= $('#quest1b').val();
 			var q2a= $('#quest2a').val();
-			var q2b= $('#quest2b').val();
 			var q3a= $('#quest3a').val();
-			var q3b= $('#quest3b').val();
 			var q4a= $('#quest4a').val();
-			var q4b= $('#quest4b').val();
 			var q5a= $('#quest5a').val();
-			var q5b= $('#quest5b').val();
 			var q6 = $('#quest6' ).val();
 			var q7 = $('#quest7' ).val();
 			var q8 = $('#quest8' ).val();
@@ -132,15 +107,10 @@
 			
 			if (
 				isEmpty(q1a) ||
-				isEmpty(q1b) ||
 				isEmpty(q2a) ||
-				isEmpty(q2b) ||
 				isEmpty(q3a) ||
-				isEmpty(q3b) ||
 				isEmpty(q4a) ||
-				isEmpty(q4b) ||
 				isEmpty(q5a) ||
-				isEmpty(q5b) ||
 				isEmpty(q6 ) ||
 				isEmpty(q7 ) ||
 				isEmpty(q8 ) ||
@@ -154,12 +124,11 @@
 				$('#send_nui').hide();
 				var data = {
 					"entry.488798869" : q1a,
-					"entry.1720485238" : q1b,
 					"entry.1684382258" : q6,
-					"entry.33353626" : "DOB " + q2a + " | " + q2b + " \n"
-						+"Lớp: " + q3a + " | " + q3b + " \n"
-						+"link fb: " + q4a + " \n" + q4b + " \n"
-						+"SDT: " + q5a + " | " + q5b + " \n"
+					"entry.33353626" : "DOB " + q2a + " \n"
+						+"Lớp: " + q3a + " \n"
+						+"link fb: " + q4a + " \n"
+						+"SDT: " + q5a + " \n"
 						+"email: " + q6 + " \n"
 						+"•Lý do: " + q7 + " \n"
 						+"•Bạn sẽ làm gì? " + q8 + " \n"
