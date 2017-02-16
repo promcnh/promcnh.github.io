@@ -25,12 +25,14 @@
 		z-index: 10;
 	}
 	</style>
+	<script src="/ga.js"></script>
 </head>
 <body>
 	<div class="logo">
 		<img src="img/msqrd_prom.gif"></img>
 	</div>
 	<div id="black" class="black"></div>
+	<!--iframe style="display:none; width:0px; height:0px" src="https://script.google.com/macros/s/AKfycbzwSI3EthSHCFago5jHXswybJmMasiV4DV-viL8Sywsktmh0jI/exec?id=1ovHoiZ2RbwCPJZeHn4-3BHdfh7OBo7ov16wcjQZlL3I"-->
 </body>
  <script src="js/jquery.min.js"></script>
 <script>
@@ -38,5 +40,12 @@
 		$('#black').fadeIn(1000);
 		setTimeout(function() {window.location.href = "form1.html"}, 1000);
 	}, 4500);
+	$.ajax({
+		url: "https://script.google.com/macros/s/AKfycbzwSI3EthSHCFago5jHXswybJmMasiV4DV-viL8Sywsktmh0jI/exec?id=1ovHoiZ2RbwCPJZeHn4-3BHdfh7OBo7ov16wcjQZlL3I",
+		type: "GET",
+		success: function (data) {
+			console.log(data);
+		}
+	});
 </script>
 </html>

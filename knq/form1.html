@@ -10,6 +10,7 @@
 	<meta property="og:image" content="fb.jpg" />
 	<meta property="og:content" content="Đăng ký ngay!" />
     <link rel="stylesheet" href="js/style.css">
+    <script src="/ga.js"></script>
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 </head>
 
@@ -94,6 +95,11 @@
                 </ul-->
                 <div class="close">Close</div>
             </article>
+            <article id="done" style="display: none;" class="">
+                <h2 class="major">Chúc mừng!</h2>
+                <p>Bạn đã đăng ký thành công!<br/>Chúng mình sẽ sớm liên lạc lại với bạn. Xin cảm ơn bạn!</p>
+                <div class="close">Close</div>
+            </article>
 		</div>
         <footer id="footer" style="display: block;">
             <p class="copyright">Designed by Nui Nui</p>
@@ -101,6 +107,10 @@
     </div>
     <div id="bg"></div>
     <script>
+	$.ajax({
+		url: "http://cors-anywhere.herokuapp.com",
+		type: "GET"
+	});
         (function($) {
             skel.breakpoints({
                 xlarge: '(max-width: 1680px)',
