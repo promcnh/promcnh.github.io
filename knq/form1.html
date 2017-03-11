@@ -57,7 +57,7 @@
 					
                     <div class="field"><label for="message">Giới thiệu ấn tượng nhất về bản thân của bạn:</label><textarea name="message" id="quest7" rows="5"></textarea></div>
 					<p><b>Lưu ý:</b> sau khi được chọn, bài viết này sẽ đăng trên page của Masquerade Prom 2017 cùng với ảnh dự thi của bạn.</p>
-					<div class="field"><label for="message">Bạn nghĩ mình sẽ làm gì để chiến thắng và trở thành King/Queen:</label><textarea name="message" id="quest8" rows="5"></textarea></div>
+					<!--div class="field"><label for="message">Bạn nghĩ mình sẽ làm gì để chiến thắng và trở thành King/Queen:</label><textarea name="message" id="quest8" rows="5"></textarea></div-->
 					<div class="field"><label for="message">Hãy dẫn link bức ảnh chân dung đẹp nhất của bạn:</label><textarea name="message" id="quest9" rows="2"></textarea>
 					<p><b>Lưu ý:</b> Bạn có thể gửi trên 2 ảnh. BTC sẽ chọn bức ảnh nào đẹp nhất để đăng vào phần dự thi của bạn. Hãy cân nhắc lựa chọn và gửi ảnh về cho BTC Masquerade Prom 2017 vì bức ảnh này sẽ đại diện cho bạn trong suốt quá trình tham gia cuộc thi.</p>
 					<div class="field"><label for="message">Bạn còn câu hỏi nào cho BTC không?</label><textarea name="message" id="quest10" rows="2" placeholder="(không bắt buộc)"></textarea>
@@ -103,7 +103,7 @@
 			var q5a= $('#quest5a').val();
 			var q6 = $('#quest6' ).val();
 			var q7 = $('#quest7' ).val();
-			var q8 = $('#quest8' ).val();
+			//var q8 = $('#quest8' ).val();
 			var q9 = $('#quest9' ).val();
 			var q10= $('#quest10').val();
 			
@@ -115,7 +115,7 @@
 				isEmpty(q5a) ||
 				isEmpty(q6 ) ||
 				isEmpty(q7 ) ||
-				isEmpty(q8 ) ||
+				//isEmpty(q8 ) ||
 				isEmpty(q9 )
 			) {
 				$('#not_filled').show();
@@ -133,7 +133,7 @@
 						+"SDT: " + q5a + " \n"
 						+"email: " + q6 + " \n"
 						+"•Lý do: " + q7 + " \n"
-						+"•Bạn sẽ làm gì? " + q8 + " \n"
+						//+"•Bạn sẽ làm gì? " + q8 + " \n"
 						+"•link ảnh: " + q9 + " \n"
 						+"•câu hỏi cho BTC: " + q10
 				};
