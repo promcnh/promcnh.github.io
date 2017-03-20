@@ -56,7 +56,7 @@
 					</div>
 					
                     <div class="field"><label for="message">Giới thiệu ấn tượng nhất về bản thân của bạn:</label><textarea name="message" id="quest7" rows="5"></textarea></div>
-					<p><b>Lưu ý:</b> sau khi được chọn, bài viết này sẽ đăng trên page của Masquerade Prom 2017 cùng với ảnh dự thi của bạn.</p>
+					<p><b>Lưu ý:</b> Bài viết ít nhất 150 từ. Sau khi được chọn, bài viết này sẽ đăng trên page của Masquerade Prom 2017 cùng với ảnh dự thi của bạn.</p>
 					<!--div class="field"><label for="message">Bạn nghĩ mình sẽ làm gì để chiến thắng và trở thành King/Queen:</label><textarea name="message" id="quest8" rows="5"></textarea></div-->
 					<div class="field"><label for="message">Hãy dẫn link bức ảnh chân dung đẹp nhất của bạn:</label><textarea name="message" id="quest9" rows="2"></textarea>
 					<p><b>Lưu ý:</b> Bạn có thể gửi trên 2 ảnh. BTC sẽ chọn bức ảnh nào đẹp nhất để đăng vào phần dự thi của bạn. Hãy cân nhắc lựa chọn và gửi ảnh về cho BTC Masquerade Prom 2017 vì bức ảnh này sẽ đại diện cho bạn trong suốt quá trình tham gia cuộc thi.</p>
@@ -120,6 +120,8 @@
 			) {
 				$('#not_filled').show();
 				setTimeout(function() {$('#not_filled').hide();}, 6000);
+			} else if (countWords(q7) < 150) {
+				alert('Lỗi: Phần giới thiệu bản thân phải ít nhất là 150 từ bạn nhé!');
 			} else {
 				$('#not_filled').hide();
 				$('#sending').show();
@@ -129,13 +131,13 @@
 					"entry.1684382258" : q6,
 					"entry.33353626" : "DOB " + q2a + " \n"
 						+"Lớp: " + q3a + " \n"
-						+"link fb: " + q4a + " \n"
+						+"Link fb: " + q4a + " \n"
 						+"SDT: " + q5a + " \n"
-						+"email: " + q6 + " \n"
-						+"•Lý do: " + q7 + " \n"
+						+"Email: " + q6 + " \n"
+						+"•Giới thiệu về bản thân: " + q7 + " \n"
 						//+"•Bạn sẽ làm gì? " + q8 + " \n"
-						+"•link ảnh: " + q9 + " \n"
-						+"•câu hỏi cho BTC: " + q10
+						+"•Link ảnh: " + q9 + " \n"
+						+"•Câu hỏi cho BTC: " + q10
 				};
 				$.ajaxPrefilter( function (options) {
 					if (options.crossDomain && jQuery.support.cors) {
@@ -169,6 +171,9 @@
 				});
 				//console.log(data);
 			}
+		}
+		function countWords(str) {
+			return str.trim().split(/\s+/).length;
 		}
 		function isEmpty(obj) {
 			return (obj == null || obj == "" || obj == undefined);
