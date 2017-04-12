@@ -94,11 +94,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 					html = "Họ và tên: <span class=\"big\">"+snapshot.val().b+"</span><br/>";
 					if (snapshot.val().d != 100)
 						html += "Lớp: <span class=\"big\">"+khoa(snapshot.val().d) +" " + chuyen(snapshot.val().c)+"</span><br/>";
-					if (snapshot.val().b1 == "")
-						html += "Loại vé: <span class=\"big\">vé "+(snapshot.val().t=='ticket01'? 'đơn' : 'đôi')+"</span><br/>";
+					/*if (snapshot.val().b1 == "")
+						html += "Loại vé: <span class=\"big\">vé "+(snapshot.val().t=='ticket01'? 'thường' : 'kèm suất ăn')+"</span><br/>";
 					else
-						html += "Loại vé: <span class=\"big\">vé đôi đặc biệt</span><br/>"+
-								"Tên ghi trên vé: "+snapshot.val().b1+" & "+snapshot.val().b2+"<br/>";
+						//html += "Loại vé: <span class=\"big\">vé đôi đặc biệt</span><br/>"+
+						html += "Tên ghi trên vé: "+snapshot.val().b1+" & "+snapshot.val().b2+"<br/>";*/
 								
 					//////////
 					html += "--------<br/>"
