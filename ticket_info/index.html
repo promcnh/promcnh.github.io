@@ -109,7 +109,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 					
 					//////////
 					var shipPrice = getShipPrice(snapshot.val());
-					var ticketPrice = snapshot.val().t=='ticket01'? 50 : 100;
+					var ticketPrice = snapshot.val().t=='ticket01'? 100 : 100;
 					html += "--------<br/>";
 					if (shipPrice > 0) {
 						html += "Phí ship: " + shipPrice + ".000đ<br/>";
