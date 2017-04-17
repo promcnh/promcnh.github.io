@@ -103,13 +103,15 @@ firebase.auth().onAuthStateChanged(function(user) {
 					//////////
 					html += "--------<br/>"
 					html += "SĐT: "+snapshot.val().e+"<br/>"+
-						"Email: "+snapshot.val().f+"<br/>";
+						"Email: "+snapshot.val().f+"<br/>"+
+						"Số lượng: "+snapshot.val().b2+" vé<br/>";
 					if (snapshot.val().g != "")
 						html += "Địa chỉ: "+snapshot.val().g+"<br/>";
 					
 					//////////
 					var shipPrice = getShipPrice(snapshot.val());
-					var ticketPrice = snapshot.val().t=='ticket01'? 100 : 100;
+					//var ticketPrice = snapshot.val().t=='ticket01'? 100 : 100;
+					var ticketPrice = 100*(+snapshot.val().b2);
 					html += "--------<br/>";
 					if (shipPrice > 0) {
 						html += "Phí ship: " + shipPrice + ".000đ<br/>";
