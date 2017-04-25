@@ -9,6 +9,21 @@
 	<script src="/ga.js"></script>
 </head>
 <body>
-	<img src="http://ec2-54-245-145-117.us-west-2.compute.amazonaws.com/knq/knq.php"></img>
+	<center>
+	<div id="imgview" style="display:none">
+		<img src="http://ec2-54-245-145-117.us-west-2.compute.amazonaws.com/knq/knq.php" id="img"></img>
+	</div>
+	<div id="loadview">
+		</br>
+		<h1>Xin chờ...</h1></br>
+		<img src="loading.gif" height="100px"></img>
+	</div>
+	</center>
 </body>
+<script>
+	setTimeout(function() {
+		document.getElementById("imgview").style.display = "inline";
+		document.getElementById("loadview").style.display = "none";
+	}, 3000)
+</script>
 </html>
