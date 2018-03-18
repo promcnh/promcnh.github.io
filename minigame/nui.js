@@ -1,4 +1,4 @@
-var backend_name = "//localhost:5000";
+var backend_name = "https://api.chatbot.ngxson.com";
 
 var formSubmit = function(token) {
     var email = $("#email").val();

@@ -1,3 +1,5 @@
+var backend_name = "https://api.chatbot.ngxson.com";
+
 $(document).ready(function() {
 	document.getElementById("loading").style.display = "none";
 	document.getElementById("submitbtn").style.display = "inline";
@@ -25,6 +27,7 @@ document.getElementById("fromMainView").style.display = "none";
 document.getElementById("loading").style.visibility = "visible";
 var app = angular.module('app', ['firebase']);
 var loaive = 1;
+var mScope;
 app.controller('ticketCtrl', ['$scope', '$firebase',
 	function($scope, $firebase) {
 		num=0;
@@ -43,125 +46,133 @@ app.controller('ticketCtrl', ['$scope', '$firebase',
 		});
 		
 		$scope.sendChat = function() {
-			nuiNui();
+			nuiNui($scope);
 		}
-		
-		function nuiNui() {
-			/* get option params */
-			var e;
-			var diachiid = 1;
-			var e1;
-			var chuyenid = 0;
-			var e2;
-			var lopid = "100";
-			var isDuplicated = false;
-			var myNumber = 0;
-			var currentdate = new Date(); 
-			var dateinnano = currentdate.getTime();
-			var myName = toTitleCase($scope.nameMes);
-			var diachi2 = "";
-			var fillState = false;
-			
-			/*lalalalalalala*/
-			if(document.getElementById('veb').checked) {
-				loaive = 2;
-				e = document.getElementById("ddlViewBy");
-				diachiid = e.options[e.selectedIndex].value;
-				diachi2 = document.getElementById("diachi2").value;
-			} else {
-				loaive = 1;
-				diachi2="";
-				diachiid=1;
-			}
-			
-			if (!($scope.checkSchool)) {
-				e1 = document.getElementById("optionChuyen");
-				chuyenid = e1.options[e1.selectedIndex].value;
-				e2 = document.getElementById("optionLop");
-				lopid = e2.options[e2.selectedIndex].value;
-			}
-			
-			fillState = ($scope.nameMes == "") ||
-					($scope.mailMes == "") ||
-					((lopid != "100")&&(chuyenid == 0)) ||
-					(lopid == 0) ||
-					($scope.chatMes == "");
 
-			if (partnerName) {
-				if ($scope.nameMesA.length > 18 || $scope.nameMesB.length > 18) {
-					alert(errPartnerName);
-					return;
-				}
-				fillState = fillState || ($scope.nameMesA == "") || ($scope.nameMesB == "");
-			} else {
-				$scope.nameMesA = ""; $scope.nameMesB = "";
-			}
-			
-			if (!(/\s/.test(myName)) || myName.length > 30) {
-				alert (errNoValidName);
-			} else if(fillState) {
-				alert (errNotFullFill);
-			} else if(!validateEmail($scope.mailMes)) {
-				alert (errWrongEmail);
-			} else if(isDuplicated) {
-				alert (errDuplicated);
-			} else if((loaive == 1) || ((loaive == 2) && (diachiid != 1) && (diachi2 != ""))) {
-				document.getElementById("submitbtn").style.display = "none";
-				document.getElementById("finalMsg").innerHTML = ("<center>"+waitMsg+"</center>");
-				selSLV = document.getElementById("optionSLV");
-				
-				var myTicketData = {
-					captcha: $scope.captcha,
-					ticket: ticket_kind,
-					//a: firebase.database.ServerValue.TIMESTAMP, //time
-					b: myName, //name
-					b1: $scope.nameMesA, //name1
-					//b2: $scope.nameMesB, //name2
-					b2: +(selSLV.options[selSLV.selectedIndex].value),
-					c: +(chuyenid), //chuyen
-					d: +(lopid), //lop
-					e: $scope.chatMes, //sdt
-					f: $scope.mailMes, //mail
-					g: diachi2, //addr
-					h: diachiid, //ship
-					s: false
-				};
-				
-				$.ajax({
-					type: "POST",
-					url: "submit.php",
-					timeout: 8000,
-					data: myTicketData,
-					success: function (data) {
-						if (data.slice(-2) == 'OK') {
-							console.log("successful!");
-							document.getElementById("finalMsg").innerHTML = (doneMsg + myName + "! </br>" + doneMsg2);
-							document.getElementById("finalMsgUber").innerHTML = (doneMsgUber);
-							//document.getElementById("fromMainView").style.display = "none";
-							//document.getElementById("guideReceiveTicket").style.display = "none";
-							$('#fromMainView').slideUp();
-							$scope.checkShip = "none";
-						} else if (data.slice(-11)=='ERR_CAPTCHA'){
-							resetSubmitBtn();
-							alert("Sai mã xác nhận!");
-						} else if (data.slice(-6)=='ERR_DB') {
-							resetSubmitBtn();
-							alert(errDuplicated);
-						}
-					},
-					error: function (xhr, ajaxOptions, thrownError) {
-						resetSubmitBtn();
-						alert(errNetwork + "\n" + thrownError);
-					}
-				});
-			} else {
-				alert(errNoAddr);
-			}
-			
-			function resetSubmitBtn() {
-				document.getElementById("submitbtn").style.display = "inline";
-				document.getElementById("finalMsg").innerHTML = "";
-			}
-		}
+		mScope = $scope;
 	}
 ]);
+
+function formSubmit(token) {
+	nuiNui(mScope);
+}
+
+var nuiNui = function($scope) {
+	/* get option params */
+	var e;
+	var diachiid = 1;
+	var e1;
+	var chuyenid = 0;
+	var e2;
+	var lopid = "100";
+	var isDuplicated = false;
+	var myNumber = 0;
+	var currentdate = new Date(); 
+	var dateinnano = currentdate.getTime();
+	var myName = toTitleCase($scope.nameMes);
+	var diachi2 = "";
+	var fillState = false;
+	
+	/*lalalalalalala*/
+	if(document.getElementById('veb').checked) {
+		loaive = 2;
+		e = document.getElementById("ddlViewBy");
+		diachiid = e.options[e.selectedIndex].value;
+		diachi2 = document.getElementById("diachi2").value;
+	} else {
+		loaive = 1;
+		diachi2="";
+		diachiid=1;
+	}
+	
+	if (!($scope.checkSchool)) {
+		e1 = document.getElementById("optionChuyen");
+		chuyenid = e1.options[e1.selectedIndex].value;
+		e2 = document.getElementById("optionLop");
+		lopid = e2.options[e2.selectedIndex].value;
+	}
+	
+	fillState = ($scope.nameMes == "") ||
+			($scope.mailMes == "") ||
+			((lopid != "100")&&(chuyenid == 0)) ||
+			(lopid == 0) ||
+			($scope.chatMes == "");
+
+	/*if (partnerName) {
+		if ($scope.nameMesA.length > 18 || $scope.nameMesB.length > 18) {
+			alert(errPartnerName);
+			return;
+		}
+		fillState = fillState || ($scope.nameMesA == "") || ($scope.nameMesB == "");
+	} else {
+		$scope.nameMesA = ""; $scope.nameMesB = "";
+	}*/
+	
+	if (!(/\s/.test(myName)) || myName.length > 30) {
+		toastr.error(errNoValidName, "CHÚ Ý"); grecaptcha.reset();
+	} else if(fillState) {
+		toastr.error(errNotFullFill, "CHÚ Ý"); grecaptcha.reset();
+	} else if(!validateEmail($scope.mailMes)) {
+		toastr.error(errWrongEmail, "CHÚ Ý"); grecaptcha.reset();
+	} else if(isDuplicated) {
+		toastr.error(errDuplicated, "CHÚ Ý"); grecaptcha.reset();
+	} else if((loaive == 1) || ((loaive == 2) && (diachiid != 1) && (diachi2 != ""))) {
+		document.getElementById("submitbtn").style.display = "none";
+		document.getElementById("finalMsg").innerHTML = ("<center>"+waitMsg+"</center>");
+		selSLV = document.getElementById("optionSLV");
+		
+		var myTicketData = {
+			ticket: "ticket01",
+			//a: firebase.database.ServerValue.TIMESTAMP, //time
+			b: myName, //name
+			b1: $scope.nameMesA, //name1
+			//b2: $scope.nameMesB, //name2
+			b2: +(selSLV.options[selSLV.selectedIndex].value),
+			c: +(chuyenid), //chuyen
+			d: +(lopid), //lop
+			e: $scope.chatMes, //sdt
+			f: $scope.mailMes, //mail
+			g: diachi2, //addr
+			h: diachiid, //ship
+			"g-recaptcha-response": grecaptcha.getResponse()
+		};
+		
+		$.ajax({
+			type: "POST",
+			url: backend_name+"/prom18/ticket/book",
+			timeout: 12000,
+			data: myTicketData,
+			success: function (data) {
+				if (data.slice(-2) == 'OK') {
+					console.log("successful!");
+					document.getElementById("finalMsg").innerHTML = (doneMsg + myName + "! </br>" + doneMsg2);
+					document.getElementById("finalMsgUber").innerHTML = (doneMsgUber);
+					//document.getElementById("fromMainView").style.display = "none";
+					//document.getElementById("guideReceiveTicket").style.display = "none";
+					$('#fromMainView').slideUp();
+					$scope.checkShip = "none";
+				} else if (data.slice(-11)=='ERR_CAPTCHA'){
+					resetSubmitBtn();
+					toastr.error("Không thể xác thực CAPTCHA", "LỖI");
+					grecaptcha.reset();
+				} else if (data.slice(-6)=='ERR_DB') {
+					resetSubmitBtn();
+					toastr.error(errDuplicated, "LỖI");
+					grecaptcha.reset();
+				}
+			},
+			error: function (xhr, ajaxOptions, thrownError) {
+				resetSubmitBtn();
+				toastr.error(errNetwork + "\n" + thrownError, "LỖI MẠNG");
+				grecaptcha.reset();
+			}
+		});
+	} else {
+		toastr.error(errNoAddr, "CHÚ Ý"); grecaptcha.reset();
+	}
+	
+	function resetSubmitBtn() {
+		document.getElementById("submitbtn").style.display = "inline";
+		document.getElementById("finalMsg").innerHTML = "";
+	}
+}
