@@ -1,4 +1,4 @@
-var backend_name = "http://api.chatbot.ngxson.com";
+var backend_name = "https://nui-prom2018.herokuapp.com";
 
 $(document).ready(function() {
 	document.getElementById("loading").style.display = "none";
