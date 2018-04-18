@@ -1,4 +1,4 @@
-var backend_name = "https://api.chatbot.ngxson.com";
+var backend_name = "http://api.chatbot.ngxson.com";
 
 $(document).ready(function() {
 	document.getElementById("loading").style.display = "none";
