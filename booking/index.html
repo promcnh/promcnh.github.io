@@ -101,13 +101,16 @@
 							<b>Cách thức nhận vé <b class="danger"> (*)</b>:</b> </br>
 							<td>
 								&nbsp;&nbsp;&nbsp;
-								<input type="radio" ng-model="checkShip" class="text1" name="accEnrol" id ="vea" value ="Yes" style="width: 20px; height: 20px;">&nbsp;&nbsp;
+								<input type="radio" ng-model="checkShip" class="text1" name="accEnrol" id ="vea" value ="CNH" style="width: 20px; height: 20px;">&nbsp;&nbsp;
 								Ship tới tận lớp (chỉ áp dụng cho CNH-er)</input> </br>
 								&nbsp;&nbsp;&nbsp;
-								<input type="radio" ng-model="checkShip" class="text1" name="accEnrol" id ="veb" value ="No" style="width: 20px; height: 20px;">&nbsp;&nbsp;
+								<input type="radio" ng-model="checkShip" class="text1" name="accEnrol" id ="vec" value ="No" style="width: 20px; height: 20px;">&nbsp;&nbsp;
+								Nhận tại THPT chuyên Nguyễn Huệ (áp dụng cho học sinh trường ngoài)</input> </br>
+								&nbsp;&nbsp;&nbsp;
+								<input type="radio" ng-model="checkShip" class="text1" name="accEnrol" id ="veb" value ="Home" style="width: 20px; height: 20px;">&nbsp;&nbsp;
 								Ship về tận nhà</input> </br>
 							</td>
-							<section id="guideReceiveTicket" ng-if='checkShip === "No"'></br>
+							<section id="guideReceiveTicket" ng-if='checkShip === "Home"'></br>
 								<b>Địa chỉ <b class="danger"> (*)</b>:</b></br><input type="text" id="diachi2" style="font-size : 20px; width: 100%; height: 35px;"/> </br>&nbsp;</br>
 								<b>Quận huyện <b class="danger"> (*)</b>:</b> (Phí ship có trong bảng)</br>
 								<select id="ddlViewBy" style="font-size : 20px; width: 100%; height: 35px;">
@@ -118,10 +121,12 @@
 								</select>
 								&nbsp;</br>
 							</section></br>
-							<section id="guideReceiveTicket" ng-if='checkShip === "Yes"'>
-								<!--b>Địa điểm nhận vé đã đặt:</b> </br>
-								&nbsp;&nbsp;&nbsp;ở 1 nơi nào đó trên trái đất này</br>
-								<b><a href="https://www.facebook.com/IridescentProm2016/photos/a.1144245765600649.1073741828.1142415402450352/1227137077311517/?type=3&theater&__mref=message_bubble" target="_blank">(Bấm vào đây để xem chi tiết)</a></b></br></br-->
+							<section id="guideReceiveTicket" ng-if='checkShip === "No"'>
+								<b>Địa điểm nhận vé đã đặt:</b> Trường THPT chuyên Nguyễn Huệ</br>
+								560B Quang Trung, La Khê, Hà Đông, Hà Nội</br></br>
+								<b>Bạn có thể tới nhận vào hôm nào, lúc mấy giờ?<b class="danger"> (*)</b>:</b> <br/>
+								<span class="small">&nbsp;&nbsp;(Chúng mình sẽ liên hệ lại với bạn qua ĐT)</span></br>
+								<input type="text" id="thgiannhan" style="font-size : 20px; width: 100%; height: 35px;"/> </br>&nbsp;</br>
 							</section>
 							
 							<b>Số lượng:</b> 

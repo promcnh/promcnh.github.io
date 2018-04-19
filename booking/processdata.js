@@ -79,10 +79,15 @@ var nuiNui = function($scope) {
 		e = document.getElementById("ddlViewBy");
 		diachiid = e.options[e.selectedIndex].value;
 		diachi2 = document.getElementById("diachi2").value;
+	} else if (document.getElementById('vec').checked) {
+		loaive = 3;
+		e = document.getElementById("ddlViewBy");
+		diachiid = -1;
+		diachi2 = document.getElementById("thgiannhan").value;
 	} else {
 		loaive = 1;
-		diachi2="";
-		diachiid=1;
+		diachi2 = "";
+		diachiid = 1;
 	}
 	
 	if (!($scope.checkSchool)) {
@@ -116,7 +121,9 @@ var nuiNui = function($scope) {
 		toastr.error(errWrongEmail, "CHÚ Ý"); grecaptcha.reset();
 	} else if(isDuplicated) {
 		toastr.error(errDuplicated, "CHÚ Ý"); grecaptcha.reset();
-	} else if((loaive == 1) || ((loaive == 2) && (diachiid != 1) && (diachi2 != ""))) {
+	} else if((loaive == 1)
+			|| ((loaive == 2) && (diachiid != 1) && (diachi2 != ""))
+			|| ((loaive == 3) && (diachi2 != ""))) {
 		document.getElementById("submitbtn").style.display = "none";
 		document.getElementById("finalMsg").innerHTML = ("<center>"+waitMsg+"</center>");
 		selSLV = document.getElementById("optionSLV");
@@ -168,7 +175,7 @@ var nuiNui = function($scope) {
 			}
 		});
 	} else {
-		toastr.error(errNoAddr, "CHÚ Ý"); grecaptcha.reset();
+		toastr.error(errNotFullFill, "CHÚ Ý"); grecaptcha.reset();
 	}
 	
 	function resetSubmitBtn() {
